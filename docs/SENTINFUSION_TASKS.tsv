@@ -78,7 +78,7 @@ T76	Spec	Experiment/hypothesis table (§7.3)	Ridhesh	Low	Not started	0		2025-08-
 T77	Spec	Query → SQL mappings (T30)	T	Medium	Not started	0		2025-08-18	Write explicit query→ontology→SQL for Mumbai demo
 T78	Spec	Ontology → warehouse table mapping (T28)	T	Medium	Not started	0		2025-08-20	Link §2.5 entities to Snowflake/Databricks tables
 T79	Process	Kanban board setup (GitHub Projects)	T	High	Not started	0		2025-08-07	Columns: Backlog, In Progress, Review, Done; load T37–T78
-T80	Process	Git repo initialization	T	High	In progress	20		2025-08-05	"git init -b main, root .gitignore, initial commit; branch structure (main + feature branches)."
+T80	Process	Git repo initialization	T	High	Done	100		2025-08-05	"Done 2026-08-02: git init -b main (commit 3fb3cf0), root .gitignore (node_modules/.venv/datasets/macOS junk excluded), 159 files committed, clean tree. Branch structure: main + feature branches."
 T81	Process	Weekly sync notes template (T36)	T	Low	Not started	0		2025-08-09	Template: what was done, blockers, next steps
 T82	Process	Fix vitest glob (exclude `._*`)	T	Low	Not started	0		2025-08-06	Add exclude: ['**/._*'] to vite.config.ts
 T83	Process	Add CI/CD pipeline (GitHub Actions)	T	Medium	Not started	0		2025-08-12	Run tests, lint, build on PRs
