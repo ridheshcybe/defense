@@ -1,0 +1,33 @@
+# Python / AI backend
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Node / frontend
+node_modules/
+dist/
+dist-ssr/
+coverage/
+
+# macOS junk
+.DS_Store
+**/._*
+._*
+
+# Large data artifacts (never commit datasets)
+data/multimodal_datasets/
+data/raw/
+data/chm/
+data/dtm/
+*.tar.gz
+*.tif
+*.mat
+*.h5
+*.hdf5
+
+# Env & secrets
+.env
+.env.*
+*.pem

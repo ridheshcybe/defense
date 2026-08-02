@@ -1,0 +1,26 @@
+[project]
+name = "sentinelfusion-ai"
+version = "0.1.0"
+description = "Multimodal AI pipeline for SentinelFusion (satellite + webcam/thermal + WiFi CSI + audio fusion)"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "torchvision",
+    "transformers",
+    "opencv-python",
+    "librosa",
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic>=2",
+    "numpy",
+    "pillow",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "httpx"]
+
+[tool.setuptools.packages.find]
+include = ["ai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

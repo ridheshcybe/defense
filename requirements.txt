@@ -1,0 +1,16 @@
+# SentinelFusion AI backend — core multimodal pipeline
+# Runtime
+torch>=2.0
+torchvision
+transformers
+opencv-python
+librosa
+fastapi
+uvicorn[standard]
+pydantic>=2
+numpy
+pillow
+
+# Test
+pytest
+httpx

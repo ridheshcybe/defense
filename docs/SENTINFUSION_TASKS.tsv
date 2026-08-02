@@ -1,0 +1,84 @@
+Task ID	Section	Task Name	Owner	Priority	Status	% Complete	Checkbox	Due (suggested)	Notes
+T01	Vision & Scope	Finalize vision and scope text for SentinelFusion	Ridhesh	High	Done	100		2026-08-03	"Vision text finalized in spec §1 (concise 1–2 paragraphs)."
+T02	Vision & Scope	Review and polish vision text	T	Medium	Done	100		2026-08-04	"Vision polished in §1; review incorporated into the spec."
+T03	Roles & Tenants	Write full roles & permissions section	Ridhesh	High	Done	100		2026-08-05	"§2.1 complete: Field Ops / Analyst / Leadership / Crew Transport goals, actions, access rules; enforced in frontend via ProtectedRoute RBAC."
+T04	Roles & Tenants	Review roles/permissions and spot UX gaps	T	Medium	Done	100		2026-08-06	"§6.5 maps each role to screens/components (UX implications); all 4 role views implemented."
+T05	Roles & Tenants	Define AOI tier semantics and update cadence	Ridhesh	High	Done	100		2026-08-05	"§2.2 complete: Tier 1–4, update frequency, priority, per-role visibility."
+T06	AOI & Incidents	Finalize AOI model (fields, lifecycle, tiers)	Ridhesh	High	Done	100		2026-08-06	"§3.1 complete: box/polygon geometry (WGS84), id, name, tier, tenant_id, lifecycle (active/archived), audit."
+T07	AOI & Incidents	Finalize incident model (fields, lifecycle)	Ridhesh	High	Done	100		2026-08-07	"§3.2 complete: types, severity, triage, time window, modalities, AOI/entity/group links, merge/split, lifecycle states."
+T08	AOI & Incidents	Write plain-language AOI & incident overview	T	Medium	In progress	50		2026-08-08	"Models fully documented in §3.1/§3.2; a dedicated plain-language non-technical overview not yet written."
+T09	AOI & Incidents	Design zone model (heatmap/no-go/target)	Ridhesh	High	Done	100		2026-08-08	"§3.3 complete: zone types, geometry, severity_score, valid_from/until, source_incident_ids."
+T10	AOI & Incidents	Create AOI/incident/zone Mermaid diagrams	T	Medium	Done	100		2026-08-09	"Appendix A.1 (AOI flow incl. zone updates) and A.2 (incident graph) diagrams present."
+T11	Graph Design	Define incident knowledge graph schema	Ridhesh	High	Done	100		2026-08-09	"§3.4 complete: node types, edge types, attributes, example queries (Mumbai incident query)."
+T12	Graph Design	Draw graph schema diagram in Mermaid	T	Medium	Done	100		2026-08-10	"Appendix A.2 graph diagram drawn; FOLLOWS and BELONGS_TO_TENANT edges not shown (minor gap)."
+T13	Data & Pipelines	Write satellite ingestion pipeline outline	Ridhesh	High	Done	100		2026-08-10	"§4.4.1 complete: ingest → preprocess → AOI crop → feature extraction → output."
+T14	Data & Pipelines	Write webcam ingestion pipeline outline	Ridhesh	High	Done	100		2026-08-11	"§4.4.2 complete: ingest → preprocess → AOI association → features → output."
+T15	Data & Pipelines	Write news ingestion pipeline outline	Ridhesh	High	Done	100		2026-08-11	"§4.4.3 complete: ingest → preprocess → AOI association → embeddings/tags → output."
+T16	Data & Pipelines	Define dataset schemas per modality	T	Medium	Done	100		2026-08-12	"§4.2 source formats + AI_PIPELINE_ARCH §2 per-modality tensor schemas (input/output shapes)."
+T17	Data & Pipelines	Document basic data quality rules	T	Medium	Done	100		2026-08-13	"§4.6 complete: cloud cover, CRS consistency, timestamp sanity, dedup/spam filter, topic filtering."
+T18	Data & Pipelines	Create high-level data flow diagram	T	Low	Done	100		2026-08-14	"AI_PIPELINE_ARCH §1 system diagram + spec Appendix A.3 multimodal pipeline diagram."
+T19	Models	Specify per-modality encoder designs	Ridhesh	High	Done	100		2026-08-14	"§5.2 designs + implemented in ai/models/ (satellite/video/csi/audio feature extractors)."
+T20	Models	Define multimodal fusion transformer design	Ridhesh	High	Done	100		2026-08-15	"§5.3 design + implemented in ai/models/multimodal_transformer.py (modality tokens, 4 layers, masking)."
+T21	Models	Define task heads (incident, zone, explanation)	Ridhesh	High	Done	100		2026-08-15	"§5.4 designs + implemented heads (type, severity, aleatoric μ/logσ², reliability)."
+T22	Models	Write simple explanation/narrative spec	T	Medium	Done	100		2026-08-16	"§5.4.3 template-based structured summaries; richer LLM narratives left for later."
+T23	Models	Document edge–cloud split concept	Ridhesh	Medium	Done	100		2026-08-16	"§5.5 complete: cloud-centric v1 with conceptual edge preprocessing."
+T24	UI/UX	Define Analyst view screens and components	Ridhesh	High	Done	100		2026-08-17	"Implemented in frontend: AOI explorer with Leaflet, AOILayer + IncidentLayer by tier, zone overlays, AOIDetailPanel with fusion summary + timeline, QuerySearch, incident workbench (triage/modalities/entities), and CRUD forms. 27 test files, 166 tests passing."
+T25	UI/UX	Define Field Ops view screens and components	Ridhesh	High	Done	100		2026-08-17	"Implemented in frontend: mobile-first FieldOpsView, IncidentList with status filter/sort, IncidentDetails (Start/Complete/Add Note), NoteDialog, Google Maps navigation, FieldOpsContext + fieldOpsApi."
+T26	UI/UX	Define Leadership and Crew Transport views	Ridhesh	Medium	Done	100		2026-08-18	"Leadership view implemented: KPICards (6 KPIs with trends), recharts bar/pie/line charts, ActivityFeed, DateRangeSelector (7/30/90d + custom), PDF Export Report via react-pdf. Crew Transport view implemented: mobile-first CrewTransportView, AssignmentList (status filter), AssignmentDetails (Start route/Complete/Add note), RouteCard with inline SVG route visualization, Google Maps navigation, CrewTransportContext + mock crewTransportApi, /crew-transport route gated to crew_transport role. 173 tests passing across 28 files."
+T27	UI/UX	Write UI/UX spec section in doc	T	Medium	Done	100		2026-08-18	"§6 complete (design principles, 4 role views, common components, cadence) incl. §6.5 implemented role → screens → components mapping."
+T28	Ontology-lite	Define ontology-lite schema (AOI, Incident, Entity, Group, Zone, Role)	Ridhesh	High	In progress	60		2026-08-19	"Ontology entity list defined in §2.5; conceptual mapping to warehouse tables still pending."
+T29	Ontology-lite	Design onboarding wizard flow	T	Medium	Done	100		2026-08-20	"§2.5 flow + OnboardingWizard implemented (Warehouse, Tables, AOI, ColumnMapping, Roles steps)."
+T30	Ontology-lite	Write example query mappings (e.g., Mumbai incidents query)	Ridhesh	Medium	In progress	50		2026-08-20	"Example queries present in §3.4/§6.2.1 and QuerySearch UI; explicit query→ontology+SQL mapping not written."
+T31	Evaluation	Define core metrics (incident, zone, latency)	Ridhesh	High	Done	100		2026-08-21	"§7.1 complete: model metrics, incident metrics, edge–cloud metrics, analyst-level demos."
+T32	Evaluation	Outline research tracks and paper ideas	Ridhesh	Medium	Done	100		2026-08-21	"§7.2 complete: Tracks A–F (AOI Brains, Analyst-First, Ontology-Lite, More Than Prediction, Terrain, SLAM3R)."
+T33	Evaluation	Add simple experiment/hypothesis table	T	Low	Not started	0		2026-08-21	"No experiment/hypothesis table yet; add as §7.3 or a standalone experiments doc."
+T34	Process	Set up and maintain Kanban board	T	Medium	In progress	20		2026-08-03	"Kanban board not present in repo (likely external, e.g. GitHub Projects); nothing to verify locally."
+T35	Process	Keep spec as source of truth (ongoing)	Shared	High	In progress	50		2026-08-21	"Spec actively maintained as source of truth: 1,050 lines, §6.5 implementation mapping added; continue after major decisions."
+T36	Process	Weekly sync notes and decisions	Shared	Medium	Not started	0		2026-08-09	"No weekly sync notes in repo yet; create one note per week with key decisions and open questions."
+T37	Data	Download all satellite/HS/MS datasets	Ridhesh	High	In progress	40		2025-08-05	"Partially downloaded: GLiHT (AK_10Jul2014 CHM/DTM + index.txt + curl.bash), airborne, hyperspectral (AeroRIT/classic/indoor_realworld/OHID1/salient/STARCOP), multimodal (multi_spectral_motion), rgb_thermal (DroneVehicle/SegFly). Missing: MDAS, Ticino, HySpecNet-11k, HYPSO-1, Wyvern, Indian Pines, Salinas, Sentinel-2."
+T38	Data	Create unified AI-ready format (HDF5/Parquet)	Ridhesh	High	Not started	0		2025-08-07	Preprocess, tile, normalize, split train/val/test, create manifest.csv
+T39	AI	Train per-modality encoders (HS/MS/RGB)	Ridhesh	High	Not started	0		2025-08-10	Use pre-trained models or train from scratch; save embeddings
+T40	AI	Train fusion transformer + incident head	Ridhesh	High	Not started	0		2025-08-12	Fuse embeddings, train classification head, validate accuracy
+T41	Backend	Implement live `/api/inference/predict`	Ridhesh	High	In progress	60		2025-08-14	"Backend endpoint live (ai/api/inference.py: predict/batch/models, wired in model_server.py), 34 backend tests pass. Frontend still on mock data — wiring tracked in T43/T65–T67."
+T42	Backend	Create data ingestion scripts (satellite/webcam/news)	Ridhesh	Medium	Not started	0		2025-08-16	Collectors for real-time data feeds
+T43	Frontend	Wire Analyst view to live AI API	T	High	Not started	0		2025-08-15	Replace mock data with real predictions from `/api/inference/predict`
+T44	Frontend	Add AI prediction confidence UI	T	Medium	In progress	40		2025-08-17	"Basic confidence chip already in AOIDetailPanel (runAOPrediction). Duplicates T68 — merge into one; full uncertainty UI pending."
+T45	Frontend	Build onboarding wizard (T29)	T	Medium	Done	100		2025-08-19	"Already implemented (Warehouse/Tables/AOI/ColumnMapping/Roles steps). Duplicates T29/T69."
+T46	Spec	T30 — Query → SQL mappings	T	Medium	Not started	0		2025-08-10	"Duplicate of T77 (and T30). Keep T77 as canonical."
+T47	Spec	T33 — Experiment/hypothesis table	Ridhesh	Low	Not started	0		2025-08-12	"Duplicate of T76 (and T33). Keep T76 as canonical."
+T48	Spec	T08 — Plain-language overview	T	Low	Not started	0		2025-08-14	"Duplicate of T75 (and T08). Keep T75 as canonical."
+T49	Spec	T28 — Map ontology to warehouse tables	T	Medium	Not started	0		2025-08-16	"Duplicate of T78 (and T28). Keep T78 as canonical."
+T50	Process	T36 — Weekly sync notes	T	Low	Not started	0		2025-08-09	"Duplicate of T81 (and T36). Keep T81 as canonical."
+T51	Process	Initialize git repo + commits	T	High	Not started	0		2025-08-05	"Duplicate of T80. Keep T80 as canonical."
+T52	Process	Fix vitest glob (exclude `._*`)	T	Low	Not started	0		2025-08-06	"Duplicate of T82. Keep T82 as canonical."
+T53	Data	Satellite data collector script	Ridhesh	High	Not started	0		2025-08-08	Pull from Copernicus, NASA Earthdata, Wyvern; store in data/raw/
+T54	Data	Webcam feed collector script	Ridhesh	Medium	Not started	0		2025-08-10	RTSP/HTTP streams, frame extraction, motion detection
+T55	Data	News feed collector script	T	Medium	Not started	0		2025-08-10	RSS/API (GDELT, NewsAPI), text extraction, NLP preprocessing
+T56	Data	Data quality validation (DQ rules)	T	Medium	Not started	0		2025-08-12	Implement §4.6 DQ rules (completeness, consistency, timeliness)
+T57	Data	Create data manifest (metadata)	T	Low	Not started	0		2025-08-14	JSON/CSV with dataset source, timestamp, CRS, band info
+T58	AI	Per-modality encoder training (HS)	Ridhesh	High	Not started	0		2025-08-12	Hyperspectral encoder (PCA + CNN or ViT)
+T59	AI	Per-modality encoder training (MS)	Ridhesh	High	Not started	0		2025-08-12	Multispectral encoder (ResNet or EfficientNet)
+T60	AI	Per-modality encoder training (RGB)	Ridhesh	High	Not started	0		2025-08-12	RGB encoder (pre-trained ResNet/ViT)
+T61	AI	Fusion transformer training	Ridhesh	High	Not started	0		2025-08-15	Combine HS/MS/RGB embeddings, train attention layers
+T62	AI	Incident detection head training	Ridhesh	High	Not started	0		2025-08-17	Classification head (protest, threat, movement, etc.)
+T63	AI	Model evaluation & validation	Ridhesh	Medium	Not started	0		2025-08-19	Accuracy, F1, ROC-AUC per class; uncertainty calibration
+T64	AI	Model versioning & registry	T	Low	Not started	0		2025-08-21	Track model versions, metrics, training data (MLflow or similar)
+T65	Frontend	Wire Field Ops view to live AI API	T	High	Not started	0		2025-08-16	Replace mock data with real predictions
+T66	Frontend	Wire Leadership view to live AI API	T	Medium	Not started	0		2025-08-18	Replace mock data with real predictions
+T67	Frontend	Wire Crew Transport view to live AI API	T	Medium	Not started	0		2025-08-18	Replace mock data with real predictions
+T68	Frontend	Add AI confidence & uncertainty UI	T	Medium	In progress	40		2025-08-20	"Basic confidence chip exists in AOIDetailPanel; full confidence-interval / model-version / per-modality uncertainty UI pending."
+T69	Frontend	Onboarding wizard (T29)	T	High	Done	100		2025-08-22	"Already implemented — duplicates T29/T45."
+T70	Frontend	Add real-time AI updates (WebSocket)	T	Low	Not started	0		2025-08-24	WebSocket for live AI predictions (optional)
+T71	Backend	API rate limiting & auth	Ridhesh	Medium	Not started	0		2025-08-16	Add rate limits, API keys, JWT auth for /api/inference/*
+T72	Backend	Caching for AI predictions	Ridhesh	Low	Not started	0		2025-08-18	Cache predictions for repeated queries (Redis or in-memory)
+T73	Backend	API monitoring & logging	T	Low	Not started	0		2025-08-20	Add structured logging, metrics (Prometheus/Grafana)
+T74	Backend	Error handling & fallbacks	Ridhesh	Medium	Not started	0		2025-08-22	Graceful degradation if AI model fails
+T75	Spec	Plain-language overview (§7.4)	T	Low	Not started	0		2025-08-14	Non-technical summary for reviewers, stakeholders
+T76	Spec	Experiment/hypothesis table (§7.3)	Ridhesh	Low	Not started	0		2025-08-16	Track hypotheses, experiments, results, conclusions
+T77	Spec	Query → SQL mappings (T30)	T	Medium	Not started	0		2025-08-18	Write explicit query→ontology→SQL for Mumbai demo
+T78	Spec	Ontology → warehouse table mapping (T28)	T	Medium	Not started	0		2025-08-20	Link §2.5 entities to Snowflake/Databricks tables
+T79	Process	Kanban board setup (GitHub Projects)	T	High	Not started	0		2025-08-07	Columns: Backlog, In Progress, Review, Done; load T37–T78
+T80	Process	Git repo initialization	T	High	In progress	20		2025-08-05	"git init -b main, root .gitignore, initial commit; branch structure (main + feature branches)."
+T81	Process	Weekly sync notes template (T36)	T	Low	Not started	0		2025-08-09	Template: what was done, blockers, next steps
+T82	Process	Fix vitest glob (exclude `._*`)	T	Low	Not started	0		2025-08-06	Add exclude: ['**/._*'] to vite.config.ts
+T83	Process	Add CI/CD pipeline (GitHub Actions)	T	Medium	Not started	0		2025-08-12	Run tests, lint, build on PRs
